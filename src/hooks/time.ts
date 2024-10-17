@@ -1,0 +1,2 @@
+export const years = Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i)
+export const months = Array.from({ length: 12 }, (_, i) => new Date(0, i).toLocaleString('es', { month: 'long' }))
