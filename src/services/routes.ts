@@ -1,7 +1,7 @@
 export default class routes {
     //? -> Produccion y desarrollo
     // static url : string = 'https://api.organizer.cl/api';
-    static url : string = 'http://192.168.1.79:8080/api';
+    static url : string = 'http://localhost:8080/api/';
 
     
     // * -> Rutas de usuario

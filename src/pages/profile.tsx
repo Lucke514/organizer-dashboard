@@ -16,6 +16,8 @@ import { Person } from "@/interfaces/person.interface"
 import { Loader } from "@/shared/loader"
 import toast, { Toaster } from 'react-hot-toast'
 import { formatRut, validateRut } from "@/util/inputs"
+import { selectStyles } from '../hooks/selectStyles';
+
 
 export default function Profile() {
     const [personalInformation, setPersonalInformation] = useState<Person | null>(null)
@@ -221,7 +223,7 @@ export default function Profile() {
                                     value={tipoDocumento.find(td => td.value === personalInformation?.id_tip_documento)}
                                     onChange={handleSelectChange('id_tip_documento')}
                                     placeholder="Seleccionar Tipo de Documento"
-                                    className="react-select-container"
+                                    styles={selectStyles}
                                     classNamePrefix="react-select"
                                 />
                             </div>
@@ -234,6 +236,7 @@ export default function Profile() {
                                     value={generoPersona.find(g => g.value === personalInformation.id_genero)}
                                     onChange={handleSelectChange('id_genero')}
                                     placeholder="Seleccionar Género"
+                                    styles={selectStyles}
                                     className="react-select-container"
                                     classNamePrefix="react-select"
                                 />
@@ -245,6 +248,7 @@ export default function Profile() {
                                     value={estadoCivil.find(ec => ec.value === personalInformation.id_estado_civil)}
                                     onChange={handleSelectChange('id_estado_civil')}
                                     placeholder="Seleccionar Estado Civil"
+                                    styles={selectStyles}
                                     className="react-select-container"
                                     classNamePrefix="react-select"
                                 />
@@ -258,6 +262,7 @@ export default function Profile() {
                                     value={paises.find(p => p.value === personalInformation.id_pais)}
                                     onChange={handleSelectChange('id_pais')}
                                     placeholder="Seleccionar País"
+                                    styles={selectStyles}
                                     className="react-select-container"
                                     classNamePrefix="react-select"
                                 />
@@ -269,6 +274,7 @@ export default function Profile() {
                                     value={selectedRegion}
                                     onChange={handleRegionChange}
                                     placeholder="Seleccionar Región"
+                                    styles={selectStyles}
                                     className="react-select-container"
                                     classNamePrefix="react-select"
                                 />
@@ -282,6 +288,7 @@ export default function Profile() {
                                     value={selectedProvincia}
                                     onChange={handleProvinciaChange}
                                     placeholder="Seleccionar Provincia"
+                                    styles={selectStyles}
                                     className="react-select-container"
                                     classNamePrefix="react-select"
                                     isDisabled={!selectedRegion}
@@ -294,6 +301,7 @@ export default function Profile() {
                                     value={filteredComunas.find(c => c.value === personalInformation.id_comuna)}
                                     onChange={handleSelectChange('id_comuna')}
                                     placeholder="Seleccionar Comuna"
+                                    styles={selectStyles}
                                     className="react-select-container"
                                     classNamePrefix="react-select"
                                     isDisabled={!selectedProvincia}
